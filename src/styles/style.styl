@@ -1,0 +1,85 @@
+@require 'variables.styl'
+@require 'links.styl'
+@require 'roboto-flex.styl'
+
+linear_gradient_stops(steps = 11)
+    step = (100 / steps)
+    color-step = (100 / (steps - 1))
+
+    for start-index, iteration in range(0, 100, step)
+        end-index = start-index + step
+        first-stop = floor(percentage((start-index / 100)))
+        last-stop = floor(percentage((end-index / 100)))
+        color = hsl(color-primary-hue, 20%, 100 - iteration * color-step)
+        new-stops = join(' ', color, first-stop, last-stop)
+
+        if (start-index == 0)
+            stops = new-stops
+        else
+            stops = join(', ', stops, new-stops)
+
+body
+    background-color color-background-2
+    color color-text
+    padding 0
+    margin 0
+    display flex
+    flex-direction column
+    font-family 'Roboto Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-size font-size-1
+    line-height line-height
+    min-height 100vh
+    background-repeat no-repeat
+    background-image linear-gradient(to bottom, unquote(linear_gradient_stops(22)))
+
+h1, h2, h3
+    margin: rhythm * 2 0 rhythm
+
+h1
+    font-stretch extra-expanded
+    font-weight 1000
+    text-transform uppercase
+    letter-spacing 0.01em
+
+p, ol, ul
+    margin 0 0 rhythm
+
+ul, ol
+    padding-inline-start 0
+
+img
+    max-width 100%
+
+figure
+    margin 0 0 rhythm
+    display inline-block
+
+figcaption
+    text-align center
+
+figure#plant figcaption
+    color color-background-2
+
+main
+    padding rhythm
+    block-size 100%
+
+section#hero
+    max-inline-size: rhythm * 36
+    margin 0 auto
+
+footer
+    margin-block-start auto
+    background-color black
+    color white
+    display flex
+    align-items center
+    justify-content center
+    padding rhythm-2 rhythm
+
+footer ul
+    list-style none
+    display flex
+    flex-wrap wrap
+    gap rhythm-05
+    margin 0

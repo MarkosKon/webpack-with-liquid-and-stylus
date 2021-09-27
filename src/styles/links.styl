@@ -1,0 +1,13 @@
+a
+    color color-accent
+    text-decoration none
+    border-block-end 1px solid darken(color-accent, 40%)
+    transition color, box-shadow 150ms ease-in-out
+
+a:hover, a:focus
+    color lighten(color-accent, 20%)
+    border-block-end 1px solid color-accent
+
+a:focus
+    outline 1px transparent
+    box-shadow 0 0 0 1px lighten(color-accent, 20%)

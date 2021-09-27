@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    // Options from https://webpack.js.org/guides/typescript/
+    "outDir": "dist", 
+    "module": "ES6",
+    "target": "es5",
+    "allowJs": true,
+    "moduleResolution": "Node",
+    "sourceMap": true,
+
+    // Options from tsc --init.
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
